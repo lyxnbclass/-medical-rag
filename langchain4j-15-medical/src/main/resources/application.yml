@@ -1,0 +1,25 @@
+logging:
+  pattern:
+    console: logging.pattern.console=%d{MM/dd HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n
+  level:
+    dev:
+      langchain4j: debug
+      ai4j:
+        openai4j: debug
+spring:
+  thymeleaf:
+    cache: false  #关闭模板缓存，方便测试
+    suffix: .html
+    prefix: classpath:/templates/
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: ${DB_PASSWORD}
+    url: jdbc:mysql://localhost:3306/medical?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+
+file:
+  path: D:\filedata\

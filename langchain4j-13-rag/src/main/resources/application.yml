@@ -1,0 +1,10 @@
+
+logging:
+  pattern:
+    console: logging.pattern.console=%d{MM/dd HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n
+  level:
+    dev:
+      langchain4j: debug
+      ai4j:
+        openai4j: debug
+

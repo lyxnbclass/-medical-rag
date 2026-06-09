@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.itbaizhan</groupId>
+    <artifactId>itbaizhan-ai2</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>itbaizhan-ai2</name>
+    <url>http://maven.apache.org</url>
+    <modules>
+        <module>langchain4j-01-demo</module>
+        <module>langchain4j-02-chat</module>
+        <module>langchain4j-03-streaming</module>
+        <module>langchain4j-04-image</module>
+        <module>langchain4j-05-generateimage</module>
+        <module>langchain4j-06-chatmemory</module>
+        <module>langchain4j-07-prompt</module>
+        <module>langchain4j-08-structure</module>
+        <module>langchain4j-09-funcation</module>
+        <module>langchain4j-10-search</module>
+        <module>langchain4j-11-qdrant</module>
+        <module>langchain4j-12-sensitiveword</module>
+        <module>langchain4j-13-rag</module>
+        <module>langchain4j-14-tika</module>
+      <module>langchain4j-15-medical</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-boot.version>3.3.4</spring-boot.version>
+    </properties>
+
+    <!-- 加载bom 后，所有langchain4j引用不需要加版本号 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>dev.langchain4j</groupId>
+                <artifactId>langchain4j-bom</artifactId>
+                <version>0.35.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
